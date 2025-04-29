@@ -12,7 +12,7 @@ export default defineConfig({
             exposes: {
                 './SpiceTracker': './src/components/SpiceTracker.tsx',
             },
-            shared: ['react', 'react-dom'],
+            shared: ['react', 'react-dom', '@auth0/auth0-react'],
         })],
     build: {
         modulePreload: false,
