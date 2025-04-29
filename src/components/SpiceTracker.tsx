@@ -1,3 +1,15 @@
-const SpiceTracker = () => <div>Spice Tracker 2</div>;
+import {useAuth0} from "@auth0/auth0-react";
+
+const SpiceTracker = () => {
+    const { isLoading, isAuthenticated, user } =
+        useAuth0();
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+    if (!isAuthenticated) {
+        return <div>User must log in first...</div>;
+    }
+    return <div>Spice Tracker - {user?.given_name} {user?.family_name}</div>;
+};
 
 export default SpiceTracker;
