@@ -4,7 +4,9 @@ import './index.css';
 import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App';
 
-createRoot(document.getElementById('root')!).render(
+const rooElement = document.getElementById('root');
+if (!rooElement) throw new Error('No root element found');
+createRoot(rooElement).render(
   <StrictMode>
     <Auth0Provider
       domain={'dajohnston.eu.auth0.com'}
