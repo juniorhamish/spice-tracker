@@ -31,6 +31,6 @@ jobs:
       - run: npm run lint
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v6
-        if: ${{ matrix.node-version == 'lts/iron' }}
+        if: ${{ matrix.node-version == 'lts/krypton' }}
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
