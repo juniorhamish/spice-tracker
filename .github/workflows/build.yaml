@@ -29,3 +29,8 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm run lint
+      - name: SonarQubeScan
+        uses: SonarSource/sonarqube-scan-action@v6
+        if: ${{ matrix.node-version == 'lts/iron' }}
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
