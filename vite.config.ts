@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import federation from '@originjs/vite-plugin-federation';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
@@ -17,5 +18,14 @@ export default defineConfig({
   ],
   build: {
     target: 'esnext',
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTests.ts',
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html', 'lcov'],
+    },
   },
 });
