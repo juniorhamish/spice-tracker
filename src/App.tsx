@@ -12,7 +12,7 @@ function App() {
         type="button"
         onClick={() =>
           logout({
-            logoutParams: { returnTo: window.location.origin },
+            logoutParams: { returnTo: globalThis.location.origin },
           })
         }
       >
