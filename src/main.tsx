@@ -11,7 +11,7 @@ createRoot(rooElement).render(
       domain={'dajohnston.eu.auth0.com'}
       clientId={'IgckwgORISVWwBUI7BQSD2AtIlL2onsX'}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: globalThis.location.origin,
       }}
     >
       <App />
